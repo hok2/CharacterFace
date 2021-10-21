@@ -96,8 +96,8 @@ text-transform: uppercase;
 
  .file-upload-image { 
    position: relative; 
-   max-width: 300px;
-   max-height: 300px;
+   max-width: 200px;
+   max-height: 200px;
    width: 100%; 
    height: 100% ;
    margin: auto;
@@ -216,7 +216,7 @@ text-transform: uppercase;
 
 .notice-text {
   font-family: NanumSquareR;
-  font-size: 0.2rem;
+  font-size: 0.5rem;
   text-align: right;
   vertical-align: bottom;
   color: #35465d;

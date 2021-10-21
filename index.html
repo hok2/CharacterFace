@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <meta name="naver-site-verification" content="4b8e1f59fe0a5c3f157456831d9e44743485649a" />
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -72,14 +73,14 @@
             </div>
             <p class="result-message"></p>
             <div id="label-container"></div>
-
-            <!-- Go to www.addthis.com/dashboard to customize your tools -->
-            <div id="addThis" class="addthis_inline_share_toolbox"></div>
-
+          
             <div class="image-title-wrap">
                 <button type="button" onclick="removeUpload()" class="remove-image">다른 사진으로 재시도
                 </button>
             </div>
+              <!-- Go to www.addthis.com/dashboard to customize your tools -->
+              <div id="addThis" class="addthis_inline_share_toolbox"></div>
+
         </div>
     </div>
     <footer class="footer">
@@ -109,7 +110,7 @@
         <script>
             function readURL(input) {
 
-                Loading();
+                // Loading();
 
                 if (input.files && input.files[0]) {
                     var reader = new FileReader();
@@ -121,6 +122,8 @@
                         $('.image-title').html(input.files[0].name);
                     };
                     reader.readAsDataURL(input.files[0]);
+
+                    Loading();
 
                     init().then(function () {
                         predict();

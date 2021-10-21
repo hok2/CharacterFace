@@ -1,0 +1,289 @@
+body {
+  font-family: sans-serif;
+  background-color: #000000;
+}
+.file-upload {
+  padding: 5% 5%;
+  margin: 5% 10%;
+  border-radius: 10px;
+  border: solid 10px #255652;
+  background-color: #E2D7C7;
+}
+.file-upload-btn {
+width: 100%;
+margin: 0;
+color: #fff;
+background: #1FB264;
+border: none;
+padding: 10px;
+border-radius: 4px;
+border-bottom: 4px solid #15824B;
+transition: all .2s ease;
+outline: none;
+text-transform: uppercase;
+font-weight: 700;
+}
+
+.file-upload-btn:hover {
+background: #1AA059;
+color: #ffffff;
+transition: all .2s ease;
+cursor: pointer;
+}
+
+.file-upload-btn:active {
+border: 0;
+transition: all .2s ease;
+}
+
+.file-upload-content {
+display: none;
+text-align: center;
+}
+
+#loading {
+display: none;
+}
+
+.file-upload-input {
+position: absolute;
+margin: 0;
+padding: 0;
+width: 100%;
+height: 100%;
+outline: none;
+opacity: 0;
+cursor: pointer;
+}
+
+.image-upload-wrap {
+  width: 60%;
+  margin: 0 auto;
+  position: relative;
+  object-fit: contain;
+  border-radius: 10px;
+  border: dashed 1.5px #35465d;
+  background-color: #ffffff;
+}
+
+.image-dropping,
+.image-upload-wrap:hover {
+  background-color: #D0BFA8;
+  border: 1.5px dashed #ffffff;
+}
+
+.image-title-wrap {
+padding: 0 15px 15px 15px;
+color: #222;
+}
+
+.drag-text {
+text-align: center;
+}
+
+.drag-text h3 {
+font-weight: 500;
+text-transform: uppercase;
+}
+
+/* test */
+/* .file-upload-image {
+  max-height: 60%;
+  max-width: 60%;
+  margin: auto;
+  padding: 10px;
+  } */
+
+ .file-upload-image { 
+   position: relative; 
+   max-width: 300px;
+   max-height: 300px;
+   width: 100%; 
+   height: 100% ;
+   margin: auto;
+   padding: 10px;
+  } 
+
+ .file-upload-image img { 
+  display: inline-block; 
+  min-width: 100%; 
+  min-height: 100%; 
+  }
+
+
+.remove-image {
+  padding: 10px 20px;
+  margin: 0;
+  color: #fff;
+  background: #E64480;
+  border: none;
+  padding: 10px;
+  border-radius: 104px;
+  border-bottom: 4px solid #E64480;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.remove-image:hover {
+  background: #CD4B79;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.remove-image:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+.nav-distance {
+    padding: 2.1% 7.7%;
+}
+
+.navbar-light .navbar-brand {
+  font-family: NanumSquareR;
+  line-height: 1.68;
+  text-align: left;
+  color: #ffffff
+  ; 
+}
+.navbar-light .navbar-brand:hover {
+  font-family: NanumSquareR;
+  line-height: 1.68;
+  text-align: left;
+  color: #ffffff; 
+}
+
+.navbar-light .navbar-toggler {
+    border-color: #000000;
+}
+
+.section {
+    margin-top: 5%;
+}
+.section-div{
+  text-align: center;
+}
+
+.title {
+  font-family: NanumSquareR;
+  line-height: 1.67;
+  text-align: center;
+  color: #255652;
+}
+
+.subtitle {
+  font-family: NanumSquareR;
+  /* line-height: 1.53; */
+  text-align: center;
+  color: #E64480;
+}
+
+
+.gameLogo {
+  max-height: 60%;
+  max-width: 60%;
+  margin: auto;
+  padding: 10px;
+  align-content: center;
+  }
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 10px;
+  }
+    .navbar-brand {
+        font-size: 2rem;
+    }
+}
+
+.upload {
+    width: 50%;
+}
+
+.upload-text {
+    width: 58%;
+    font-family: NanumSquareR;
+    font-size: 1.5rem;
+    line-height: 1.53;
+    text-align: center;
+    color: #35465d;
+    margin: 0 auto;
+}
+
+.notice-text {
+  font-family: NanumSquareR;
+  font-size: 0.2rem;
+  text-align: right;
+  vertical-align: bottom;
+  color: #35465d;
+  margin: 2%;
+}
+
+.chracter-title {
+  color: #255652;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.chracter-quotes {
+  font-size: 1.3rem;
+  color: #E64480;
+  font-weight: bold;
+}
+.chracter-msg {
+  font-size: 0.8rem;
+  color: #255652;
+  font-weight: bold;
+}
+
+.under {
+  margin: 10% 5% 5% 5%;
+  text-align: center;
+}
+.under-text {
+  color: #ffffff7e;
+  font-size: 0.5rem;
+}
+
+#loading {
+  display: none;
+  margin: 3%;
+  color:#E64480
+}
+
+.loader 
+{
+     position: absolute;
+     width: 50px; 
+      height: 50px; 
+      margin: -75px 0 0 -75px; 
+      border: 16px solid #edecf1; 
+      border-radius: 50%; 
+      border-top: 16px solid #E64480; 
+      position: fixed;
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+      /* -webkit-animation: spin 2s linear infinite;  */
+      animation: spin 2s linear infinite; 
+  }
+
+
+@-webkit-keyframes spin { 
+  0% { -webkit-transform: rotate(0deg); } 
+  100% { -webkit-transform: rotate(360deg); } 
+} 
+
+@keyframes spin { 
+  0% { transform: translate(-50%,-50%) rotate(0deg); } 
+  100% { transform: translate(-50%,-50%) rotate(360deg); } 
+}
+
+
+/* #E64480 핑크
+#255652 청록
+#D0BFA8 모래색
+#E2D7C7 연한모래색 */

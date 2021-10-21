@@ -216,7 +216,7 @@ text-transform: uppercase;
 
 .notice-text {
   font-family: NanumSquareR;
-  font-size: 0.5rem;
+  font-size: 0.7rem;
   text-align: right;
   vertical-align: bottom;
   color: #35465d;
@@ -252,6 +252,10 @@ text-transform: uppercase;
   display: none;
   margin: 3%;
   color:#E64480
+}
+
+.ad-banner {
+  max-width: 320px;
 }
 
 .loader 

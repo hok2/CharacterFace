@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>어징어게임에 오신것을 환영합니다. </title>
+    <title>미녀 타입 테스트 </title>
     <link rel="stylesheet" href="style.css">
 
     <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
@@ -45,9 +45,9 @@
     </nav>
     <section class="section">
         <div class="section-div">
-            <img src="image/gameLogo.png" class="gameLogo">
+            <img src="image/ImgGameLogo.png" class="gameLogo">
             <h1 class="title">재미로 보는 AI 테스트 </h1>
-            <h2 class="subtitle">어징어게임에서 나는 몇번 참가자일까?</h2>
+            <h2 class="subtitle">나는 어떤 타입의 미녀일까?</h2>
         </div>
     </section>
 
@@ -58,7 +58,7 @@
             <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
             <div class="drag-text">
                 <img src="image/figure.png" class="mt-5 pt-5 upload">
-                <h3 class="mb-5 pb-5 pt-4  upload-text">사진을 업로드하여<br>어징어 게임 참가하기</h3>
+                <h3 class="mb-5 pb-5 pt-4  upload-text">사진을 업로드하여<br>알아보기</h3>
                 <p class="notice-text">* 사진은 어디에도 저장되지 않습니다.</p>
             </div>
         </div>
@@ -165,7 +165,8 @@
         // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
         // the link to your model provided by Teachable Machine export panel
         // techable macine URL
-        const URL = "https://teachablemachine.withgoogle.com/models/NaFJzBdMx/"; //어징어게임
+        // const URL = "https://teachablemachine.withgoogle.com/models/NaFJzBdMx/"; //어징어게임
+        const URL = "https://teachablemachine.withgoogle.com/models/tfw3xNuRe/"; //냉온
         let model, webcam, labelContainer, maxPredictions;
         // Load the image model and setup the webcam
         async function init() {
@@ -179,9 +180,14 @@
             model = await tmImage.load(modelURL, metadataURL);
             maxPredictions = model.getTotalClasses();
             labelContainer = document.getElementById("label-container");
-            for (let i = 0; i < maxPredictions; i++) { // and class labels
-                labelContainer.appendChild(document.createElement("div"));
+            for (let i = 0; i < maxPredictions; i++) {
+                var element = document.createElement("div")
+                element.classList.add("d-flex");
+                labelContainer.appendChild(element);
             }
+            // for (let i = 0; i < maxPredictions; i++) { // and class labels
+            //     labelContainer.appendChild(document.createElement("div"));
+            // }
         }
         // run the webcam image through the image model
         async function predict() {
@@ -194,120 +200,180 @@
             console.log("hho log - prediction ")
 
             var resultTitle;
-            var resultQuotes;
+            var resultCeleb;
             var resultMessage;
 
             console.log(prediction[0]);
             console.log(prediction[0].className);
             switch (prediction[0].className) {
-                case "000_조연":
-                    resultTitle = "어디선가 탈락한 존재감 없는 참가자"
-                    resultQuotes = "....ㄷㄷㄷ";
-                    resultMessage = "능력치가 낮거나, 운이 좋지 않음. 상황 판단을 잘 못함";
+                case "온_1":
+                    resultTitle = "전형적인 댕댕이상의 온미녀"
+                    resultCeleb = "박보영";
+                    resultMessage = "귀여움, 웃상, 착해보임, 강아지상, 상냥하다";
                     break;
 
-                case "001_오일남":
-                    resultTitle = "001번 참가자 오일남"
-                    resultQuotes = "제바알... 그만해...! 나... 무서워허..! 이러다가는 다 죽어!! ";
-                    resultMessage = "진정 게임을 즐길 줄 아는 자! <br>삶의 노련함을 가지고 있다. 의외의 반전매력을 가졌다.<br>우리는 깐부잖아. 깐부끼리는 네 거 내 거가 없는 거야.";
+                case "온_2":
+                    resultTitle = "전형적인 아름다움을 가진 온미녀"
+                    resultCeleb = "손예진";
+                    resultMessage = "차분한, 청순한, 상냥한, 부드러운 첫인상, 아름다움";
+                    break;
+                case "온_3":
+                    resultTitle = "첫사랑 이미지의 온미녀"
+                    resultCeleb = "수지";
+                    resultMessage = "부드러운 첫인상, 동글동글한 ,마음이 따뜻해지는,분위기 있는";
+                    break;
+                case "온_4":
+                    resultTitle = "전형적인 미인상 온미녀"
+                    resultCeleb = "김태희";
+                    resultMessage = "마음이 따뜻해지는, 차분한, 상냥한, 분위기 있는";
+                    break;
+                case "온_5":
+                    resultTitle = "애교가 묻어나는 온미녀"
+                    resultCeleb = "문채원";
+                    resultMessage = "수수해보이는, 귀여움, 다정다감,동글동글 ,강아지상 ";
+                    break;
+                case "온_6":
+                    resultTitle = "상큼발랄한 온미녀"
+                    resultCeleb = "박하선";
+                    resultMessage = "편안한 분위기, 웃상, 수수해보임, 발랄한 ";
+                    break;
+                case "온_7":
+                    resultTitle = "편안한 분위기의 온미녀"
+                    resultCeleb = "송지효";
+                    resultMessage = "눈이 예쁘다, 편안한 분위기, 수수해보이는, 분위기 있는";
+                    break;
+                case "온_8":
+                    resultTitle = "러블리한 온미녀"
+                    resultCeleb = "신민아";
+                    resultMessage = "상큼하다, 아름다운 미소, 상냥한, 사랑스러움";
+                    break;
+                case "온_9":
+                    resultTitle = "수수한 아름다움을 가진 온미녀"
+                    resultCeleb = "임수정";
+                    resultMessage = "단아한, 부드러운 첫인상, 분위기 있는";
+                    break;
+                case "온_10":
+                    resultTitle = "사랑스러운 온미녀"
+                    resultCeleb = "장나라";
+                    resultMessage = "깨끗한, 편안한 분위기, 부드러운 첫인상, 상냥한";
+                    break;
+                case "온_11":
+                    resultTitle = "호불호 없는 온미녀"
+                    resultCeleb = "한지민";
+                    resultMessage = "깨끗한, 다정다감, 마음이 따뜻, 편안한 분위기";
+                    break;
+                case "온_12":
+                    resultTitle = "막내동생 같은 온미녀"
+                    resultCeleb = "효정";
+                    resultMessage = "상큼한, 귀여운, 다정다감, 상냥, 웃상, 애교가 많은";
                     break;
 
-                case "024_지영":
-                    resultTitle = "240번 참가자 지영"
-                    resultQuotes = "반드시 이기게 해줄게..꼭 살아서 나가라.";
-                    resultMessage = "친구를 위해서 기꺼이 희생 할 수 있다.<br> 염세주의적 시선을 갖고 있지만 감정이나 인간성이 없어진 것은 아니다.<br>아무 생각없는 듯 하지만 속으로 묵혀두는 스타일<br>매우 순수한 마음씨를 갖고 있다";
+                case "냉_1":
+                    resultTitle = "전형적인 미인상 냉미녀"
+                    resultCeleb = "김희선";
+                    resultMessage = "세련된, 정석 미녀상, 시원시원한, 솔직한 ";
                     break;
 
-                case "067_새벽":
-                    resultTitle = "067번 참가자 강새벽"
-                    resultQuotes = "내가 왜?";
-                    resultMessage = "머리가 꽤 좋고 담력과 깡도 좋다.<br>생존 스킬이 만렙이다.<br>매 게임마다 당황하지 않고 침착한 면<br>사람이 두려워서 혼자가 편하다.<br>강한 척 하지만 내면은 여리다.";
+                case "냉_2":
+                    resultTitle = "도도한 냉미녀"
+                    resultCeleb = "아이린";
+                    resultMessage = "시크한, 차가워보이는, 도도한 ";
                     break;
-
-                case "101_장덕수":
-                    resultTitle = "101번 참가자 장덕수"
-                    resultQuotes = "불 꺼지면 구석에 가만히 있어. 숨도 쉬지말고. 숨소리 들리면... 내가 너 잡으러 간다.";
-                    resultMessage = "잔머리가 굉장히 잘 돌아간다.<br>그룹지어서 대장놀이 하는 등 유치하고 치사하다.<br>자신의 이익을 위해서는 배신도 서슴치 않는다.";
+                case "냉_3":
+                    resultTitle = "섹시한 분위기의 냉미녀"
+                    resultCeleb = "이지아";
+                    resultMessage = "아우라가 있는,걸크러쉬의 매력, 카리스마 있는";
                     break;
-
-                case "111_의사":
-                    resultTitle = "111번 참가자 병기"
-                    resultQuotes = "여긴 내 수술실이야!";
-                    resultMessage = "뒤에서 몰래 부정을 저지르는 스타일.<br>살기 위해서는 무엇이든 한다.<br>의외로 자신의 일에 프라이드가 강한 편";
+                case "냉_4":
+                    resultTitle = "전형적으로 세련된 냉미녀"
+                    resultCeleb = "고준희";
+                    resultMessage = "세련된, 도도한, 시크한, 섹시한 ";
                     break;
-
-                case "199_알리":
-                    resultTitle = "199번 참가자 알리"
-                    resultQuotes = "솨장님 감사합니다.";
-                    resultMessage = "이 세상에 손에 꼽을 정도로 선량한 성품을 가졌다.<br>머리도 좋고 눈치도 빠르지만, 너무 쉽게 사람을 믿는 스타일<br>배신당하고 벙쪄있는 스타일<br>성실하지만 실속이 없음";
+                case "냉_5":
+                    resultTitle = "아우리가 풍기는 냉미녀"
+                    resultCeleb = "김소연";
+                    resultMessage = "세련된, 섹시한, 아우라가 있는";
                     break;
-
-                case "212_한미녀":
-                    resultTitle = "212번 참가자 한미녀"
-                    resultQuotes = "나 한미녀야!! 덕수야, 그거알아? ....";
-                    resultMessage = "빌런 중 빌런<br>대놓고 비호감에 이리저리 달라붙는 거머리같은 스타일.<br>자신의 목적 달성을 위해서라면 자존심도 기꺼이 버린다.<br>한방이 있는 스타일";
+                case "냉_6":
+                    resultTitle = "차분한 분위기의 냉미녀"
+                    resultCeleb = "민효린";
+                    resultMessage = "차분한, 신비로운 이미지를 가진, 시크한";
                     break;
-
-                case "218_조상우":
-                    resultTitle = "218번 참가자 조상우"
-                    resultQuotes = "어차피 우리가 저 돈 가지고 나가려면 다른 놈들 다 죽어야 돼. ";
-                    resultMessage = "전형적으로 양면성을 지닌 스타일.<br>항상 체면치레를 중시한다.<br>머리가 좋고 임기응변을 잘 하며, 굉장히 계산적이다.<br>스스로의 이익과 이해득실에 따른 팀워크를 우선시 함.<br>인간성이 없는듯 있는듯 없는듯 함";
+                case "냉_7":
+                    resultTitle = "시크함과 귀여움이 공존하는 냉미녀"
+                    resultCeleb = "소희";
+                    resultMessage = "개성있는, 고양이상, 시크한, 차분한 ";
                     break;
-
-                case "456_이정재":
-                    resultTitle = "456번 참가자 성기훈"
-                    resultQuotes = "이러면 안 되는 거잖아! 우리끼리 이렇게 죽이면 안 되는 거잖아!";
-                    resultMessage = "약자를 포용할 줄 아는 인간적인 매력을 가진 스타일<br>사람들이 쉽게 마음을 열 수 있는 스타일<br>어쩔때는 바보같음<br>아주 무모하지만 천운을 가짐";
+                case "냉_8":
+                    resultTitle = "커리어우먼 스타일의 냉미녀"
+                    resultCeleb = "이다희";
+                    resultMessage = "트렌디한, 도도한, 시원시원한, 또렷한 이미지를 가진";
                     break;
-
-                case "500_경찰":
-                    resultTitle = "경찰 황준호"
-                    resultQuotes = "형. 형이 왜...";
-                    resultMessage = "어느 무리에서나 적응력 만렙<br>대범함을 지닌 스타일<br>눈치가 빠르고 상황파악을 잘 한다.<br>하지만 특정한 것에 집착하여 큰일나는 스타일 ";
+                case "냉_9":
+                    resultTitle = "전형적인 미인상 냉미녀"
+                    resultCeleb = "전지현";
+                    resultMessage = "정석 미녀상, 시원시원한, 솔직한 이미지, 시크한, 차분한";
                     break;
-
-                case "600_VIP":
-                    resultTitle = "VIPS...."
-                    resultQuotes = "If you can satisfy me in five minutes, I'll change your life";
-                    resultMessage = "약자에게 사람 취급도 안하는 저급한 스타일<br>인간성 결여 된 쓰레기..<br>(죄송합니다)";
+                case "냉_10":
+                    resultTitle = "개성이 강한 냉미녀"
+                    resultCeleb = "카리나";
+                    resultMessage = "개성있는, 트렌디한, 신비로움, 에너지 있는 ";
                     break;
-
-                case "601_공유":
-                    resultTitle = "딱지치기남"
-                    resultQuotes = "선생님, 저랑 게임 하나 하시겠습니까?";
-                    resultMessage = "친절 해 보이지만 약을 잘올림<br>도발적임<br>공유임<br>잘생김, 잘생김 ";
+                case "냉_11":
+                    resultTitle = "시크한 냉미녀"
+                    resultCeleb = "크리스탈";
+                    resultMessage = "신비로운, 시크한, 도도한, 차가워보이는 ";
                     break;
-
-                case "602_진행요원":
-                    resultTitle = "동그라미 네모 세모"
-                    resultQuotes = "0_0?";
-                    resultMessage = "속을 알 수 없는 스타일<br>기계적으로 살아감<br>명령 복종형으로 상하관계를 중요시 함";
+                case "냉_12":
+                    resultTitle = "신비로운 분위기의 냉미녀"
+                    resultCeleb = "한소희";
+                    resultMessage = "세련됨, 신비로움, 화사한, 개성있는";
                     break;
-
-                case "603_프론트맨":
-                    resultTitle = "프론트맨"
-                    resultQuotes = "명심해. 우리가 누군지 알게 되면 죽는다.";
-                    resultMessage = "속을 알 수 없는 스타일<br>상황 판단이 빠르다.<br>관찰력이 뛰어나다<br>평등을 중요시 한다.";
+                case "냉_13":
+                    resultTitle = "힙한 분위기의 냉미녀"
+                    resultCeleb = "한예슬";
+                    resultMessage = "걸크러쉬, 또렷한 이목구비를 가진, 트렌디한";
                     break;
-
                 default:
-                    resultTitle = "신원미상";
-                    resultQuotes = "어징어 게임에 참가하시겠습니까?";
-                    resultMessage = "● ▲ ■";
+                    resultTitle = "";
+                    resultCeleb = "other";
+                    resultMessage = "";
                     break;
             }
+            result = "";
+            result += "AI가 판단한 당신은 '" + resultTitle + "' 입니다. <br>"
+            result += "당신은 '" + resultMessage + " '이미지가 조금 더 강하게 나타는 것으로 보입니다.<br>"
+            result += "당신과 비슷한 이미지의 연예인은 '" + resultCeleb + "' 입니다.";
 
             var title = "<div class='chracter-title'>" + resultTitle + "</div>"
-            var quotes = "<div class='chracter-quotes pt-2'>" + resultQuotes + "</div>"
-            var message = "<div class='chracter-msg pt-2 pb-2'>" + resultMessage + "</div>"
-            $('.result-message').html(title + quotes + message).show();
-            // $('.result-message').html(title + quotes + message);
+            var celeb = "<div class='chracter-celeb pt-2'>" + "아래 그래프에서 나의 냉/온 비율을 확인 해 보세요." + "</div>"
+            var message = "<div class='chracter-msg pt-2 pb-2'>" + result + "</div>"
+            $('.result-message').html(title + message + celeb).show();
 
-            // for (let i = 0; i < maxPredictions; i++) {
-            //     const classPrediction =
-            //         prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-            //     labelContainer.childNodes[i].innerHTML = classPrediction;
-            // }
+            warmstr = "온";
+            warmsum = 0;
+            coldsum = 0;
+            
+            for (let i = 0; i < maxPredictions; i++) {
+                if (prediction[i].className.indexOf(warmstr) > -1) {
+                    warmsum +=  Math.round( prediction[i].probability.toFixed(2) * 100);
+                }
+                else {
+                    coldsum +=  Math.round( prediction[i].probability.toFixed(2) * 100);
+                }
+            }
+            if(warmsum >= coldsum)
+                coldsum = 100 -warmsum;
+            else
+                warmsum = 100 - coldsum;
+
+            var label = "<div class='per-label d-flex align-items-center'>" + "온미녀" + "</div>"
+                var bar = "<div class='bar-container position-relative container'><div class='warm-box'></div><div class='d-flex justify-content-center align-items-center warm-bar' style='width: " + warmsum+"%" + "'><span class='d-block percent-text'>" + warmsum + "%</span></div></div>"
+                labelContainer.childNodes[0].innerHTML = label + bar;
+
+                var label2 = "<div class='per-label d-flex align-items-center'>" + "냉미녀" + "</div>"
+                var bar2 = "<div class='bar-container position-relative container'><div class='cold-box'></div><div class='d-flex justify-content-center align-items-center cold-bar' style='width: " + coldsum+"%" + "'><span class='d-block percent-text'>" + coldsum + "%</span></div></div>"
+                labelContainer.childNodes[1].innerHTML = label2 + bar2;
 
         }
     </script>

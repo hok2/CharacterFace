@@ -94,6 +94,21 @@ text-transform: uppercase;
   padding: 10px;
   } */
 
+  .file-upload-image { 
+    width: 15rem;
+    height: 15rem;
+    margin: auto;
+   } 
+ 
+  .file-upload-image img { 
+   display: inline-block; 
+   min-width: 100%; 
+   min-height: 100%; 
+   }
+ 
+
+
+/* 
  .file-upload-image { 
    position: relative; 
    max-width: 300px;
@@ -108,12 +123,12 @@ text-transform: uppercase;
   display: inline-block; 
   min-width: 100%; 
   min-height: 100%; 
-  }
+  } */
 
 
 .remove-image {
   padding: 10px 20px;
-  margin: 0;
+  margin: 5% 0% 2% 0%;
   color: #fff;
   background: #E64480;
   border: none;
@@ -224,18 +239,20 @@ text-transform: uppercase;
 }
 
 .chracter-title {
+  margin-top: 5%;
   color: #255652;
   font-size: 1.5rem;
   font-weight: 800;
 }
-.chracter-quotes {
-  font-size: 1.3rem;
-  color: #E64480;
+.chracter-celeb {
+  margin-top: 5%;
+  font-size: 1rem;
+  color: #181616;
   font-weight: bold;
 }
 .chracter-msg {
-  font-size: 0.8rem;
-  color: #255652;
+  font-size: 1.2rem;
+  color: #000000;
   font-weight: bold;
 }
 
@@ -286,7 +303,61 @@ text-transform: uppercase;
   100% { transform: translate(-50%,-50%) rotate(360deg); } 
 }
 
+/* hhotest */
+.bar-container {
+  height: 2.7rem;
+}
 
+.percent-text {
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.per-label {
+  font-weight: bold;
+  color: #9128287e;
+  width: 20%;
+    text-align: left;
+    height: 2rem;
+}
+#label-container {
+    width: 80%;
+    margin: 0 auto;
+}
+.cold-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  background-color: rgba(49, 155, 113, 0.2);
+}
+.cold-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  background-color:#255652;
+}
+.warm-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  background-color: rgba(235, 166, 190, 0.2);
+}
+.warm-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  background-color: #E64480;
+}
 /* #E64480 핑크
 #255652 청록
 #D0BFA8 모래색
